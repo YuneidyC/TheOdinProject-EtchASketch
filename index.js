@@ -29,3 +29,10 @@ function getRandomColor () {
 
     return color;
 }
+
+function clearGrid() {
+    const cell = document.getElementsByClassName('square');
+    for (let i = 0; i < cell.length; i++) {
+        cell[i].style.backgroundColor = '';
+    }
+}
