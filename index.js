@@ -20,7 +20,7 @@ container.addEventListener('mouseover', (e) => {
     }
 });
 
-function getRandomColor () {
+function getRandomColor() {
     let letters = '0123456789ABCDEF';
     let color ='#';
 
@@ -36,5 +36,17 @@ function clearGrid() {
     const cell = document.getElementsByClassName('square');
     for (let i = 0; i < cell.length; i++) {
         cell[i].style.backgroundColor = '';
+    }
+}
+
+function updateGrid() {
+    let newSize = prompt('Enter a number between 1 - 100');
+    removeChildNodes();
+    makeGrid(newSize);
+}
+
+function removeChildNodes() {
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
     }
 }
