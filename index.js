@@ -1,15 +1,17 @@
 const container = document.getElementsByClassName('container')[0];
 
-function makeRows(rows, cols) {
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
-    for (let i = 0; i < (rows * cols); i++) {
-        let cell = document.createElement('div')
+function makeGrid(size = 16) {
+    const squareSize = 600 / size;
+
+    for (let i = 0; i < (size * size); i++) {
+        let cell = document.createElement('div');
         container.appendChild(cell).className = "grid-item square";
+        cell.style.width = `${squareSize}px`;
+        cell.style.height = `${squareSize}px`;
     };
 };
 
-makeRows(16, 16);
+makeGrid();
 
 container.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('square'))
