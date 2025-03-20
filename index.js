@@ -1,4 +1,5 @@
-const container = document.getElementsByClassName('container')[0];
+const updateGridButton = document.getElementsByClassName('update-grid')[0];
+const clearGridButton = document.getElementsByClassName('clear-grid')[0];
 
 function makeGrid(size = 16) {
     const squareSize = 600 / size;
