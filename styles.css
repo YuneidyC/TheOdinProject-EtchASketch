@@ -1,3 +1,7 @@
+:root {
+    --scale: 0.95;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,14 +37,18 @@ button {
     background-color: plum;
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
-    font-size: 14px;
+    font-size: calc(var(--scale) * 14px);
 }
 
 button:hover {
-    scale: 1.02;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+}
+
+button:active {
+    background-color: #e08ee0;
+    scale: var(--scale);
 }
 
 .etch-a-sketch-container {
