@@ -11,8 +11,8 @@ function makeGrid(size = 16) {
         return;
     }
 
+    document.getElementsByClassName('message-error')[0].innerHTML = "";
     const squareSize = 600 / size;
-
     for (let i = 0; i < (size * size); i++) {
         let cell = document.createElement('div');
         container.appendChild(cell).className = "grid-item square";
