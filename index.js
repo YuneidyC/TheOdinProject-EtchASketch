@@ -2,6 +2,7 @@ const container = document.getElementsByClassName('etch-a-sketch-container')[0];
 
 const updateGridButton = document.getElementsByClassName('update-grid')[0];
 updateGridButton.addEventListener('click', updateGrid);
+
 const clearGridButton = document.getElementsByClassName('clear-grid')[0];
 clearGridButton.addEventListener('click', clearGrid);
 
@@ -23,18 +24,16 @@ function makeGrid(size = 16) {
 makeGrid();
 
 container.addEventListener('mouseover', (e) => {
-    if (e.target.classList.contains('square'))
-    {
+    if (e.target.classList.contains('square')) {
         e.target.style.backgroundColor = getRandomColor();
     }
 });
 
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
-    let color ='#';
+    let color = '#';
 
-    for (let i = 0; i < 6; i++)
-    {
+    for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
 
@@ -55,7 +54,7 @@ function updateGrid() {
 }
 
 function removeChildNodes() {
-    while(container.firstChild) {
+    while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
 }
