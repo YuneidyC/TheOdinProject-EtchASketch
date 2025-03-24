@@ -4,6 +4,10 @@ const clearGridButton = document.getElementsByClassName('clear-grid')[0];
 clearGridButton.addEventListener('click', clearGrid);
 
 function makeGrid(size = 16) {
+    if (!isValidGridSize(size)) {
+        return;
+    }
+
     const squareSize = 600 / size;
 
     for (let i = 0; i < (size * size); i++) {
@@ -52,4 +56,18 @@ function removeChildNodes() {
     while(container.firstChild) {
         container.removeChild(container.firstChild);
     }
+}
+
+function isValidGridSize(size) {
+    if (isNaN(size)) {
+        document.getElementsByClassName('message-error')[0].innerHTML = "Sorry, passed value is not a number. Please insert a whole numbers.";
+        clearGrid();
+        return false;
+    }
+    if (size < 1 || size > 100) {
+        document.getElementsByClassName('message-error')[0].innerHTML = "Sorry, the number cannot be less than 1 or greater than 100.";
+        clearGrid();
+        return false;
+    }
+    return true;
 }
