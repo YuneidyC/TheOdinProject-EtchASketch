@@ -1,3 +1,5 @@
+const container = document.getElementsByClassName('etch-a-sketch-container')[0];
+
 const updateGridButton = document.getElementsByClassName('update-grid')[0];
 updateGridButton.addEventListener('click', updateGrid);
 const clearGridButton = document.getElementsByClassName('clear-grid')[0];
